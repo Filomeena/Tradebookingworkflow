@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+<context:component-scan base-package="com"></context:component-scan>
+
+<!-- load the driver and connection -->
+<context:component-scan base-package="FinalProject"></context:component-scan>
+<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="ds">
+<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"></property>
+<property name="username" value="system"></property>
+<property name="password" value="hr"></property>
+</bean>
+
+
+
+<!-- like prepared statement with many features -->
+<bean id="jTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+<property name="dataSource" ref="ds"></property>
+</bean>
+
+
+
+</beans>

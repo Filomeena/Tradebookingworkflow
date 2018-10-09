@@ -1,0 +1,12 @@
+
+background-image{
+	 filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+style
+{
+   filter: blur(8px);
+  -webkit-filter: blur(8px);
+	
+}
